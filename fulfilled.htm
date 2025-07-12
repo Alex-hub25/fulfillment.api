@@ -1,0 +1,81 @@
+{% extends 'layout.htm' %}
+
+{% block title %}Fulfilled{% endblock %}
+
+{% block content %}
+<h1>Fulfilled</h1>
+<!--Create api to recent shipment information submited at last page-->
+<div>
+    <table>
+        <tr>
+            <td>Username:</td>
+            <td>{{ ['username'] }}</td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td>******</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{{ ['email'] }}</td>
+        </tr>
+    </table>
+</div>
+<!--user access to database-->
+<h3>Shipped Package Database</h3>
+
+<div>
+<form action="/fulfilled" method="Post">
+<table class="trecent" >
+    <tbody  >
+    {%for header in headings%}
+    {%endfor%} 
+
+    {%for row in rows%}
+        <div >
+        <tr class="ID"><th>ID Shipments</th><th>Date</th><th>Carrier</th><th>Tracking</th></tr>
+        <tr><td>{{ row.idshipments }}</td>
+        <td>{{row.TIMESTAMP}}</td>
+        <td>{{row.carrier}}</td>
+        <td>{{row.Tracking}}</td><td><button type="submit" name="email" value="Edit">Send</button></td></tr>
+        
+        </div>    
+
+        <tr><th>Pickup Location</th></tr>
+
+        <tr >
+        <td>{{ row.LastName_pickup }}</td>
+        <td>{{ row.FirstName_pickup }}</td>
+        <td>{{ row.Address_pickup }}</td>
+        <td>{{ row.City_pickup }}</td>
+        <td>{{ row.state_pickup }}</td>
+        <td>{{ row.PostalCode_pickup }}</td>
+        </tr>
+
+        <tr><th>Delivery Location</th></tr>
+        <tr>
+        <td>{{ row.LastName_delivery }}</td>
+        <td>{{ row.FirstName_delivery }}</td>
+        <td>{{ row.Address_delivery }}</td>
+        <td>{{ row.City_delivery }}</td>
+        <td>{{ row.state_delivery }}</td>
+        <td>{{ row.PostalCode_delivery }}</td>
+        </tr>
+
+        <tr><th>Package Information</th></tr>
+        <tr><td>{{row.weight}}</td> 
+        <td>{{row.length}}</td> 
+        <td>{{row.width}}</td>
+        <td>{{row.height}}</td> 
+        <td>{{row.quantity}}</td> 
+        <td>{{row.description}}</td></tr> 
+        <tr></tr>
+    {%endfor%} 
+    
+
+    </tbody>
+    
+</table>
+</div>
+</form>
+{% endblock %}

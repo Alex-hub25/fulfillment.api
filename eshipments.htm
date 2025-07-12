@@ -1,0 +1,25 @@
+{% extends 'layout.htm' %}
+
+{% block title %}AShipments{% endblock %}
+
+{% block content %}
+<h1>E-Comm Ship</h1>
+
+<table action="/label" method="post">
+    <tbody>
+        <h2>Orders</h2>
+        {%for row in rows%}
+        <tr>
+        <td><input class="input" type="text" name="invoice_number" placeholder="{{ row.invoice_number }}" id="invoice_number"></td>
+        <td><input class="input" type="text" name="order_number" placeholder="{{ row.order_number }}" id="order_number"></td>
+        <td><input class="input" type="text" name="sender" placeholder="{{ row.sender }}" id="sender"></td>
+        <td><input class="input" type="text" name="receiver" placeholder="{{ row.receiver }}" id="receiver"></td>
+        <td><input class="input" type="text" name="invoice_date" placeholder="{{ row.Invoice_date }}" id="invoice_date"></td>
+        <td><input class="input" type="text" name="due_date" placeholder="{{ row.due_date }}" id="due_date"></td>
+        </tr>
+        {%endfor%}
+    </tbody>   
+</table>
+
+
+{% endblock %}

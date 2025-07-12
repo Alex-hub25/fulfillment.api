@@ -1,0 +1,104 @@
+{% extends 'layout.htm' %}
+
+{% block title %}Shipments{% endblock %}
+
+{% block content %}
+<h1>Manual Ship</h1>
+
+<div>
+        <h1>Enter Package Details Below:</h1>
+        <table>
+            <form action="/shipments" method="post">
+                <label for="weight">
+                </label>
+                <input type="text" name="weight" placeholder="Weight" id="weight" required>
+                <label for="length">
+                </label>
+                <input type="text" name="length" placeholder="Length" id="length" required>
+                <label for="width">
+                </label>
+                <input type="text" name="width" placeholder="Width" id="width" required>
+                <label for="height">
+                </label>
+                <input type="text" name="height" placeholder="Height" id="height" required>
+                <label for="quantity">
+                </label>
+                <input type="text" name="quantity" placeholder="Quantity" id="quantity" required>
+                <label for="description">
+                </label>
+                <input type="text" name="description" placeholder="Description" id="description" required>
+                <input type="submit" value="Ship">
+<!--Create Discription Box-->
+        </table>
+            </div>
+            <div>
+        <table>
+        <h1>Enter Pickup Details Below:</h1>
+       
+
+                <label for="LastName_pickup">
+                </label>
+                <input type="text" name="LastName_pickup" placeholder="Last Name" id="LastName_pickup" required>
+                <label for="FirstName_pickup">
+                </label>
+                <input type="FirstName" name="FirstName_pickup" placeholder="First Name" id="FirstName_pickup" required>
+                <label for="Address_pickup">
+                </label>
+                <input type="Address" name="Address_pickup" placeholder="Address" id="Address_pickup" required>
+                <label for="City_pickup">
+                </label>
+                <input type="City" name="City_pickup" placeholder="City" id="City_pickup" required>
+                <label for="State_pickup">
+                </label>
+                <input type="State" name="State_pickup" placeholder="State" id="State_pickup" required>
+                <label for="PostalCode_pickup">
+                </label>
+                <input type="PostalCode" name="PostalCode_pickup" placeholder="Zip" id="PostalCode_pickup" required>
+
+        
+            <br>
+
+            <h1>Enter Delivery Details Below:</h1>
+            <label for="LastName_delivery">
+
+            </label>
+            <input type="text" name="LastName_delivery" placeholder="Last Name" id="LastName_delivery" required>
+            <label for="FirstName_delivery">
+ 
+            </label>
+            <input type="FirstName" name="FirstName_delivery" placeholder="First Name" id="FirstName_delivery" required>
+            <label for="Address_delivery">
+  
+            </label>
+            <input type="Address" name="Address_delivery" placeholder="Address" id="Address_delivery" required>
+            <label for="City_delivery">
+
+            </label>
+            <input type="City" name="City_delivery" placeholder="City" id="City_delivery" required>
+            <label for="State_delivery">
+            </label>
+            <input type="State" name="State_delivery" placeholder="State" id="State_delivery" required>
+            <label for="PostalCode_delivery">
+            </label>
+            <input type="PostalCode" name="PostalCode_delivery" placeholder="Zip" id="PostalCode_delivery" required>
+            <div class="msg">{{ msg }}</div>
+            <input type="submit" value="Ship">
+        </form>
+        </table>
+        <div></div>
+<br>
+<div>
+    <h3>Top Carriers</h3>
+    <table class="carriers">
+        <tr>
+            <td>Price:</td>
+        </tr>
+        <tr>
+            <td>Time:</td>
+        </tr>
+        <tr>
+            <td>Reliablility:</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

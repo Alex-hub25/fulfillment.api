@@ -1,0 +1,45 @@
+{% extends 'layout.htm' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>Home Page</h1>
+<p>Welcome back, {{ username }}!</p>
+
+<div>
+    <h2>Welcome to Packit!</h2>
+    <h3 class="summery">What is Packit?</h3>
+    <p>Packit is a fully automated fulfillment system for small and 
+    and medium size companies. Providing seamless flow betwween customer
+    orders to setting up freight carriers.
+    </p>
+    <h3 class="Process">What is the process?</h3>
+    <ol class="PList">
+        <li>Scan it</li>
+        <p>Packit products include a module that handles all of 
+        heavy lifting. Simply attach the module near your scale, connect the 
+        five pin connector to the scale monitor, and set your package down with 
+        the packing slip facing the camera.
+        </p>
+        <li>Log it</li>
+        <p>Packit's module will upload all of the shipping, product, and dimensional data to a 
+        secure database for easy record keeping and information recovery.
+        </p>
+        <li>Print it</li>
+        <p>Packit will concurently provide custom documents for international Shipments
+        while setting up pickup from your prefered carriers at the best possible pricing.
+        </p>
+    </ol>
+    <h3>Automated Features</h3>
+    <ol>
+        <li>Customer Data to Carrier</li>
+        <li>Internation Documentation</li>
+        <li>Tracking Communication</li>
+        <li>Claim Processing</li>
+        <li>Data Management</li>
+        <li>Package Handling Management</li>
+    </ol>
+</div>
+<div>
+</div>
+{% endblock %}

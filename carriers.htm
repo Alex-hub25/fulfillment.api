@@ -1,0 +1,149 @@
+{% extends 'layout.htm' %}
+
+{% block title %}Carriers{% endblock %}
+
+{% block content %}
+<h1>Carriers</h1>
+<p>Success, {{ username }}! Choose your freight!</p>
+<!--Create api to recent shipment information submited at last page-->
+
+<div>  <p>Your Shipment details are below:</p>
+<form action="/carriers" method="Post">
+<table class="trecent" >
+    <tbody class="table">
+    {%for header in headings%}
+    {%endfor%} 
+
+    {%for row in rows%}
+        <tr><th>ID Shipments</th></tr>
+
+        <tr><td>{{ row.idshipments }}</td>
+        <td>{{row.TIMESTAMP}}</td></tr> 
+         
+
+        <tr><th>Pickup Location</th></tr>
+
+        <tr >
+        <td><input class="input" type="text" name="LastName_pickup" placeholder="{{ row.LastName_pickup }}" id="LastName_pickup"></td>
+        <td><input class="input" type="text" name="FirstName_pickup" placeholder="{{ row.FirstName_pickup }}" id="FirstName_pickup"></td>
+        <td><input class="input" type="text" name="Address_pickup" placeholder="{{ row.Address_pickup }}" id="Address_pickup"></td></tr>
+        <tr> 
+        <td><input class="input" type="text" name="City_pickup" placeholder="{{ row.City_pickup }}" id="City_pickup"></td>
+        <td><input class="input" type="text" name="State_pickup" placeholder="{{ row.state_pickup }}" id="State_pickup"></td>
+        <td><input class="input" type="text" name="PostalCode_pickup" placeholder="{{ row.PostalCode_pickup }}" id="PostalCode_pickup"></td>
+        </tr>
+
+        <tr><th>Delivery Location</th></tr>
+        <tr>
+        <td><input class="input" type="text" name="LastName_delivery" placeholder="{{ row.LastName_delivery }}" id="LastName_delivery"></td>
+        <td><input class="input" type="text" name="FirstName_delivery" placeholder="{{ row.FirstName_delivery }}" id="FirstName_delivery"></td>
+        <td><input class="input" type="text" name="Address_delivery" placeholder="{{ row.Address_delivery }}" id="Address_delivery"></td></tr>
+        <tr>
+        <td><input class="input" type="text" name="City_delivery" placeholder="{{ row.City_delivery }}" id="City_delivery"></td>
+        <td><input class="input" type="text" name="State_delivery" placeholder="{{ row.state_delivery }}" id="State_delivery"></td>
+        <td><input class="input" type="text" name="PostalCode_delivery" placeholder="{{ row.PostalCode_delivery }}" id="PostalCode_delivery"></td>
+        </tr>
+
+        <tr><th>Package Information</th></tr>
+        <tr><td><input class="input" type="text" name="weight" placeholder="{{row.weight}}" id="weight"></td> 
+        <td><input class="input" type="text" name="length" placeholder="{{row.length}}" id="length"></td> 
+        <td><input class="input" type="text" name="width" placeholder="{{row.width}}" id="width"></td></tr>
+        <tr> 
+        <td><input class="input" type="text" name="height" placeholder="{{row.height}}" id="height"></td> 
+        <td><input class="input" type="text" name="quantity" placeholder="{{row.quantity}}" id="quantity"></td> 
+        <td><input class="input" type="text" name="description" placeholder="{{row.description}}" id="description"></td></tr> 
+        <input type="submit" name="submit" value="Edit">
+    {%endfor%} 
+    
+
+    </tbody>
+    
+</table>
+
+<!--create return to recent inupt for editing purposes-->
+</form>
+</div> 
+
+<!--Create window api to freight network here!-->
+
+<table class="freight">
+<table>
+    <div class="fdata">
+        {Freight Company}
+    <div class="bt" >
+    <input  type="button" value="Ship Now" >
+   </div> </div>
+</table>
+<table>
+    <div class="fdata">
+        {Freight Company}
+    <div class="bt" >
+    <input  type="button" value="Ship Now" >
+   </div> </div>
+</table>
+<table>
+    <div class="fdata">
+        {Freight Company}
+    <div class="bt" >
+    <input  type="button" value="Ship Now" >
+   </div> </div>
+</table>
+<table>
+    <div class="fdata">
+        {Freight Company}
+    <div class="bt" >
+    <input  type="button" value="Ship Now" >
+   </div> </div>
+</table>
+<table>
+    <div class="fdata">
+        {Freight Company}
+    <div class="bt" >
+    <input  type="button" value="Ship Now" >
+   </div> </div>
+</table>
+<table>
+    <div class="fdata">
+        {Freight Company}
+    <div class="bt" >
+    <input  type="button" value="Ship Now" >
+   </div> </div>
+</table>
+<table>
+    <div class="fdata">
+        {Freight Company}
+    <div class="bt" >
+    <input  type="button" value="Ship Now" >
+   </div> </div>
+</table>
+<table>
+    <div class="fdata">
+        {Freight Company}
+    <div class="bt" >
+    <input  type="button" value="Ship Now" >
+   </div> </div>
+</table>
+<table>
+    <div class="fdata">
+        {Freight Company}
+    <div class="bt" >
+    <input  type="button" value="Ship Now" >
+   </div> </div>
+</table>
+<table>
+    <div class="fdata">
+        {Freight Company}
+    <div class="bt" >
+    <input  type="button" value="Ship Now" >
+   </div> </div>
+</table>
+<table>
+    <div class="fdata">
+        {Freight Company}
+    <div class="bt" >
+    <input  type="button" value="Ship Now" >
+   </div> </div>
+</table>
+
+</table>
+{% endblock %}

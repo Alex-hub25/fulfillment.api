@@ -1,0 +1,76 @@
+{% extends 'layout.htm' %}
+
+{% block title %}Config{% endblock %}
+
+{% block content %}
+<h1>Config</h1>
+<div>
+    <p>Your account details are below:</p>
+    <table>
+        <tr>
+            <td>Username:</td>
+            <td>{{ account['username'] }}</td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td>******</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{{ account['email'] }}</td>
+        </tr>
+    </table>
+    </div>
+    <div>
+        <!--lit up indicator signaling the configuration library for the user-->
+        <h3>Configuration</h3>
+        <header class="main-header">
+            <ul class="main-nav">
+                <h4>Fulfillment</h4>
+                <li class="dropdown">
+                    <a href="#">fulfillment</a>
+                    <ul class="drop-nav">
+                    <li><a>Manual Entry<input type="checkbox" value="submit"></a></li>
+                    <li><a>Store Entry<input type="checkbox" value="submit"></a></li>
+                    <li><a>Module Entry<input type="checkbox" value="submit"></a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">fulfillment</a>
+                    <ul class="drop-nav">
+                    <li><a>Manual Entry<input type="checkbox" value="submit"></a></li>
+                    <li><a>Store Entry<input type="checkbox" value="submit"></a></li>
+                    <li><a>Module Entry<input type="checkbox" value="submit"></a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">fulfillment</a>
+                    <ul class="drop-nav">
+                    <li><a>Manual Entry<input type="checkbox" value="submit"></a></li>
+                    <li><a>Store Entry<input type="checkbox" value="submit"></a></li>
+                    <li><a>Module Entry<input type="checkbox" value="submit"></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </header>
+        <table class="config">
+        <!--Checkbox links that open a table allowing users to configure app & module-->
+        <!--Password protected admin or approved users only-->
+            <tr>
+                <!--pre set promts for data input-->
+                <td>Manual Entry <input type="checkbox" value="submit"></td>
+  
+            </tr>
+            <!--api to e-commerce store-->
+            <tr>
+                <td>Store Entry <input type="checkbox" value="submit"></td>  
+            </tr>
+            <!--remote configurations to module-->
+            <tr>
+                <td>Module Entry <input type="checkbox" value="submit"></td>  
+            </tr>
+        </table>
+    </div>
+    </div>
+
+{% endblock %}

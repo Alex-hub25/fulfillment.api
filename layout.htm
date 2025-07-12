@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+    
+    
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1"/>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" >
+    <link rel="stylesheet" href="https://use.frontawesome.com/releases/v5.7.1/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="loggedin">
+    
+<nav >
+        
+    <div class="topnav" id="myTopnav">
+    <a href="{{ url_for('home') }}">PACKIT</a>
+   
+        <div class="dropdown">
+            <button class="dropbtn">Dashboard<!--Add link to GUI-->
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">                                 
+            <a href="{{ url_for('shipments') }}">Manual Ship</a>
+            <a href="{{ url_for('ashipments') }}">Module Ship</a>
+            <a href="{{ url_for('eshipments') }}">E-Comm Ship</a>
+            <!--Website Connect-->
+            </div>
+  </div>
+        <div class="dropdown">
+            <button class="dropbtn">Shipping<!--Add link to GUI-->
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">                                 
+            <a href="{{ url_for('tracking') }}">Tracking</a>
+            <a href="{{ url_for('claims') }}">Claims</a>
+            <a href="{{ url_for('pvision') }}">Packit Vision</a>
+            <!--Website Connect-->
+            </div>
+  </div>
+        <div class="dropdown">
+            <button class="dropbtn">Account
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">                   
+            <a href="{{ url_for('profile') }}"></i>Profile</a>
+            <a href="{{ url_for('fulfilled') }}">Fufilled</a>
+            <a href="{{ url_for('config') }}">Configuration</a>
+            <a href="{{ url_for('billing')}}">Billing</a>                
+            </div>
+  </div>
+  <a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+</div>
+</div>
+    </nav>
+    <div class="content">
+        {% block content %}{% endblock %}
+<!--Notification Bar-->
+    </div>
+
+</body>  
+<footer class="footer">
+    <div>
+        
+        <a href="{{ url_for('home') }}"><i class="fas fa-home"></i>Home</a>
+        <a href="{{ url_for('profile') }}"><i class="fas fa-user-circle"></i>Profile</a>
+        <a href="{{ url_for('shipments') }}"><i class="fas fa-home"></i>Ship</a>
+        <a href="{{ url_for('fulfilled') }}"><i class="fas fa-user-circle"></i>Fulfilled</a>
+        <a href="{{ url_for('carriers') }}"><i class="fas fa-home"></i>Carriers</a>
+        <a href="{{ url_for('config') }}"><i class="fas fa-user-circle"></i>Configuration</a>
+        <a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+        
+    </div>
+</footer>

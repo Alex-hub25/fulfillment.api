@@ -1,0 +1,78 @@
+{% extends 'layout.htm' %}
+
+{% block title %}AShipments{% endblock %}
+
+{% block content %}
+<h1>Module Ship</h1>
+
+<table action="/label" method="post">
+    <tbody>
+        <h2>OCR Link Test</h2>
+        {%for row in rows%}
+        <tr>
+        <td><input class="input" type="text" name="invoice_number" placeholder="{{ row.invoice_number }}" id="invoice_number"></td>
+        <td><input class="input" type="text" name="order_number" placeholder="{{ row.order_number }}" id="order_number"></td>
+        <td><input class="input" type="text" name="sender" placeholder="{{ row.sender }}" id="sender"></td>
+        <td><input class="input" type="text" name="receiver" placeholder="{{ row.receiver }}" id="receiver"></td>
+        <td><input class="input" type="text" name="invoice_date" placeholder="{{ row.Invoice_date }}" id="invoice_date"></td>
+        <td><input class="input" type="text" name="due_date" placeholder="{{ row.due_date }}" id="due_date"></td>
+        </tr>
+        {%endfor%}
+    </tbody>   
+</table>
+
+<table action="/label" method="post">
+    <tbody>
+        <h2>OCR Link Test</h2>
+        {%for row in rows%}
+        <tr><th>Pickup Location</th></tr>
+
+        <tr >
+        <td><input class="input" type="text" name="LastName_pickup" placeholder="{{ row.LastName_pickup }}" id="LastName_pickup"></td>
+        <td><input class="input" type="text" name="FirstName_pickup" placeholder="{{ row.FirstName_pickup }}" id="FirstName_pickup"></td>
+        <td><input class="input" type="text" name="Address_pickup" placeholder="{{ row.Address_pickup }}" id="Address_pickup"></td></tr>
+        <tr> 
+        <td><input class="input" type="text" name="City_pickup" placeholder="{{ row.City_pickup }}" id="City_pickup"></td>
+        <td><input class="input" type="text" name="State_pickup" placeholder="{{ row.state_pickup }}" id="State_pickup"></td>
+        <td><input class="input" type="text" name="PostalCode_pickup" placeholder="{{ row.PostalCode_pickup }}" id="PostalCode_pickup"></td>
+        </tr>
+
+        <tr><th>Delivery Location</th></tr>
+        <tr>
+        <td><input class="input" type="text" name="LastName_delivery" placeholder="{{ row.LastName_delivery }}" id="LastName_delivery"></td>
+        <td><input class="input" type="text" name="FirstName_delivery" placeholder="{{ row.FirstName_delivery }}" id="FirstName_delivery"></td>
+        <td><input class="input" type="text" name="Address_delivery" placeholder="{{ row.Address_delivery }}" id="Address_delivery"></td></tr>
+        <tr>
+        <td><input class="input" type="text" name="City_delivery" placeholder="{{ row.City_delivery }}" id="City_delivery"></td>
+        <td><input class="input" type="text" name="State_delivery" placeholder="{{ row.state_delivery }}" id="State_delivery"></td>
+        <td><input class="input" type="text" name="PostalCode_delivery" placeholder="{{ row.PostalCode_delivery }}" id="PostalCode_delivery"></td>
+        </tr>
+
+        <tr><th>Package Information</th></tr>
+        <tr><td><input class="input" type="text" name="weight" placeholder="{{row.weight}}" id="weight"></td> 
+        <td><input class="input" type="text" name="length" placeholder="{{row.length}}" id="length"></td> 
+        <td><input class="input" type="text" name="width" placeholder="{{row.width}}" id="width"></td></tr>
+        <tr> 
+        <td><input class="input" type="text" name="height" placeholder="{{row.height}}" id="height"></td> 
+        <td><input class="input" type="text" name="quantity" placeholder="{{row.quantity}}" id="quantity"></td> 
+        <td><input class="input" type="text" name="description" placeholder="{{row.description}}" id="description"></td>
+        </tr>
+        {%endfor%}
+    </tbody>   
+</table>
+
+<div>
+    <h3>Top Carriers</h3>
+    <table class="carriers">
+        <tr>
+            <td>Price:</td>
+        </tr>
+        <tr>
+            <td>Time:</td>
+        </tr>
+        <tr>
+            <td>Reliablility:</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

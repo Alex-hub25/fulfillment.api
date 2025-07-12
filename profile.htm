@@ -1,0 +1,49 @@
+{% extends 'layout.htm' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<h1>Profile Page</h1>
+<div>
+    <p>Your account details are below:</p>
+    <table>
+        <tr>
+            <td>Username:</td>
+            <td>{{ account['username'] }}</td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td>******</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{{ account['email'] }}</td>
+        </tr>
+        <tr>
+            <td>User:</td>
+            <td>{*Permisions Access*}</td>
+            <!--Admin,Limited,Access-->
+        <tr>
+    </table>
+    </div>
+    <div>
+        <!--lit up indicator signaling the configuration library for the user-->
+        <!--Checkbox links that open a table allowing users to configure app & module-->
+        <!--Password protected admin or approved users only-->
+        <!--claims tab-->
+        <h3>Module</h3>
+        <div>
+            <table action="/home" method="post">
+                 <!--To do list-->
+                <h1 class="status">Status:</h1><p class="status-msg">{{msg}}</p>
+                <h1 class="Notif">Notifications</h1>
+            </table>
+        </div>
+        <div>
+               <p>{ OCR OUTPUT }</p>
+        </div> 
+                <button type="submit"><a href="/config" value="Configuration">Configuration</a></button>
+       
+    
+
+{% endblock %}
